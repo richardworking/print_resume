@@ -1,0 +1,53 @@
+#addNote,
+#print{
+    background-color: #D0DFE6;
+    border-radius: 2%;
+    font-weight: bold;
+    width: 10em;
+    height: 30px;
+}
+
+#note {
+    height: 30px;
+    width: 40%;
+    font-size: 14px;
+    background-color: #D0DFE6;
+    border-radius: 2%;
+    font-weight: bold;
+}
+
+fieldset {
+    background-color: #E7EFF2;
+
+}
+
+label {
+
+    height: 30px;
+    width: 80%;
+    font-size: 14px;
+    background-color: #B9D0D9;
+    border-radius: 2%;
+    font-weight: bold;
+    padding: 1%;
+    border: 5px solid #2E728F;
+
+}
+
+#erase {
+    background-color: #F8D48E;
+
+}
+
+#editThis {
+    background-color: #EFEACE;
+
+}
+
+.buttons {
+    float: right;
+    border-radius: 2%;
+    font-weight: bold;
+    width: 10em;
+    height: 30px;
+}

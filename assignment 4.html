@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="notes.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="plugin.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            var noteIndex = 0;
+            $('#addNote').click(function () {
+
+
+                //1. get text from the input
+                var note = $('#note').val();
+                noteIndex++;
+                //2. add the note to a list
+                var appendNote = $('<label/>').attr({
+                    id: noteIndex
+                }).text(note);
+                appendNote.css('display', 'block');
+                //3. add my note object list to the DOM tree
+                $('fieldset').append(appendNote.append(
+                    '  <input type="button" class="buttons" id="editThis" value="Edit">' +
+                    ' <input type="button" class="buttons" id="erase" value="Delete"> '));
+
+            }); // add note function goes here. 
+
+          $(function () {
+
+                $('fieldset').on('click', 'label', function () {
+                    $(this).remove();
+
+
+                });
+
+            });
+        });
+        $(function () {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        });
+        
+        $(document).ready(function(){
+           
+       $('#print').click(function(){
+            
+        jQuery('#print').myPlugin();//plugin - code in plugin.js file 
+
+      
+    });//click function 
+}); //ready function 
+ 
+
+    </script>
+
+</head>
+
+
+<body>
+    <h2>Notes!</h2>
+    <form>
+        <!--input from user required-->
+        <input type='text' value="Enter Notes Here" id="note">
+        <input type='button' value="Add Your Note" id="addNote">
+        <input type='button' value="Print Note" id="print">
+        <!--add a note to the list-->
+        <fieldset id="sortable">
+            <legend>
+                <h2>Added Notes</h2>
+                <!--User notes will be entered here-->
+            </legend>
+
+        </fieldset>
+
+    </form>
+
+
+</body>
+
+</html>
